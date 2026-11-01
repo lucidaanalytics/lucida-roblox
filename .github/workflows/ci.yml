@@ -1,0 +1,20 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+env:
+  LUNE_VERSION: 0.11.1
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      # Roblox Studio cannot run here; the specs run under Lune with the Roblox globals faked (tests/run.luau).
+      - name: Install Lune
+        run: |
+          curl -fsSL "https://github.com/lune-org/lune/releases/download/v${LUNE_VERSION}/lune-${LUNE_VERSION}-linux-x86_64.zip" -o lune.zip
+          unzip -q lune.zip && sudo install lune /usr/local/bin/lune
+      - run: lune run tests/run
