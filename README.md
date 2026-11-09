@@ -1,5 +1,10 @@
 # Lucida for Roblox
 
+## Install
+
+From GitHub, [lucidaanalytics/lucida-roblox](https://github.com/lucidaanalytics/lucida-roblox), release `v0.1.0`: download `lucida-roblox-v0.1.0.zip` from the [release page](https://github.com/lucidaanalytics/lucida-roblox/releases/tag/v0.1.0), unzip it and run `rojo build -o Lucida.rbxm` (its `default.project.json` maps `src` to the `Lucida` module tree), then insert the model into `ServerScriptService`.
+
+
 Tests: `cd sdks/roblox && lune run tests/run` runs `src/*.spec.luau` under [Lune](https://lune-org.github.io/docs)
 with the ModuleScripts loaded behind fake `script` instances and fake `game`/HttpService/Players. The same specs
 run in Studio with TestEZ (`TestEZ.TestBootstrap:run({ ServerScriptService.Lucida })`) after `rojo build`.

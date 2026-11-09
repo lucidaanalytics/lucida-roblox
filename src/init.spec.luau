@@ -178,7 +178,7 @@ return function()
 				game:close()
 				expect(c.running).to.equal(false)
 				expect(c.queue:size()).to.equal(0)
-				expect(http.calls[#http.calls].url).to.equal("https://app.lucida.dev/v1/batch")
+				expect(http.calls[#http.calls].url).to.equal("https://capture.lucidace.com/v1/batch")
 			end
 			c.running = false
 		end)

@@ -51,7 +51,7 @@ function Lucida.new(opts: Options)
 	local rng = Random.new()
 	local self = setmetatable({
 		apiKey = opts.apiKey,
-		host = string.gsub(opts.host or "https://app.lucida.dev", "/+$", ""),
+		host = string.gsub(opts.host or "https://capture.lucidace.com", "/+$", ""),
 		mode = opts.consent or "opt_out",
 		flushAt = opts.flushAt or 20,
 		flushInterval = opts.flushInterval or 5,
